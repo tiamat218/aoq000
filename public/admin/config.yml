@@ -5,7 +5,6 @@ backend:
 media_folder: public/images
 public_folder: /images
 
-# JSON format so Vite can import the files directly
 format: json
 
 collections:
@@ -19,8 +18,17 @@ collections:
     format: json
     extension: json
     identifier_field: id
+    summary: "{{title}} — {{category}}"
+    media_folder: ""
+    public_folder: ""
+    preview_path: "/"
     fields:
-      - { label: "ID (slug, no spaces)", name: "id", widget: "string", hint: "e.g. poster-dirt — used as filename, don't change after creating" }
+      - {
+          label: "ID (slug, no spaces)",
+          name: "id",
+          widget: "string",
+          hint: "e.g. poster-dirt — used as filename, don't change after creating",
+        }
       - label: "Category"
         name: "category"
         widget: "select"
@@ -30,7 +38,12 @@ collections:
           - { label: "Posters", value: "posters" }
           - { label: "Album Covers", value: "album-covers" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subtitle", widget: "string", hint: "Short line on the grid card, e.g. 'Poster Design'" }
+      - {
+          label: "Subtitle",
+          name: "subtitle",
+          widget: "string",
+          hint: "Short line on the grid card, e.g. 'Poster Design'",
+        }
       - { label: "Thumbnail (grid image)", name: "thumbnail", widget: "image" }
       - { label: "Full image (modal)", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
