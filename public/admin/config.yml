@@ -18,11 +18,15 @@ collections:
     format: json
     extension: json
     identifier_field: id
-    summary: "{{title}} — {{category}}"
-    media_folder: ""
-    public_folder: ""
-    preview_path: "/"
+    summary: "{{order}} — {{title}} ({{category}})"
     fields:
+      - {
+          label: "Order (Reihenfolge)",
+          name: "order",
+          widget: "number",
+          default: 99,
+          hint: "Niedrigere Zahl = weiter vorne, z.B. 1, 2, 3...",
+        }
       - {
           label: "ID (slug, no spaces)",
           name: "id",

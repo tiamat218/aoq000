@@ -1,8 +1,6 @@
 import { portfolioProjects as hardcodedProjects } from '@/content/portfolio/projects';
 import type { PortfolioFilterSlug, PortfolioProject } from '@/types/portfolio';
 
-// Load any JSON files written by Decap CMS from public/content/projects/
-// Returns an empty record if the folder doesn't exist yet.
 const cmsFiles = import.meta.glob<PortfolioProject>(
   '/public/content/projects/*.json',
   { eager: true }
@@ -10,14 +8,11 @@ const cmsFiles = import.meta.glob<PortfolioProject>(
 
 const cmsProjects: PortfolioProject[] = Object.values(cmsFiles);
 
-// Merge: CMS projects take precedence over hardcoded ones (matched by id).
-// This means you can gradually move projects to the CMS without losing the
-// hardcoded ones, and once all are in the CMS the hardcoded list is ignored.
 const hardcodedIds = new Set(cmsProjects.map((p) => p.id));
 const mergedProjects: PortfolioProject[] = [
   ...cmsProjects,
   ...hardcodedProjects.filter((p) => !hardcodedIds.has(p.id)),
-];
+].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
 
 export const portfolioProjects = mergedProjects;
 

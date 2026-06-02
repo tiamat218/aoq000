@@ -16,10 +16,6 @@ export interface PortfolioCategory {
   label: string;
 }
 
-/**
- * Single portfolio entry. Field names align with a future Decap CMS collection
- * (title, category, subtitle, thumbnail, image, description, id/slug).
- */
 export interface PortfolioProject {
   id: string;
   category: PortfolioCategorySlug;
@@ -31,4 +27,6 @@ export interface PortfolioProject {
   /** Full image in the project modal. */
   image: string;
   description: string;
+  /** Optional sort order — lower number appears first. */
+  order?: number;
 }

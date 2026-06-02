@@ -21,9 +21,9 @@ export default function Navbar() {
     >
       <a
         href="#"
-        className="text-sm font-semibold tracking-widest uppercase text-[var(--text)] no-underline"
+        className="text-sm font-semibold tracking-widest no-underline"
       >
-        Anastasia Morozevič
+        
       </a>
       <ul className="flex gap-8 md:gap-10 list-none">
         <li>
