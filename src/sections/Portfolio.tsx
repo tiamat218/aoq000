@@ -83,8 +83,11 @@ export default function Portfolio({ onOpenModal }: PortfolioProps) {
     <section id="work" className="px-6 pt-4 pb-24 md:px-12">
       <div
         ref={toolbarRef}
-        className="max-w-[1200px] mx-auto mb-12 flex flex-nowrap items-center justify-between gap-2 min-w-0"
+        className="max-w-[1200px] mx-auto mb-12"
       >
+        <span className="block text-[clamp(10px,2vw,12px)] text-[var(--text-muted)] font-normal mb-2">
+          {projectCountLabel}
+        </span>
         <div className="flex flex-nowrap items-center gap-[clamp(0.35rem,1.8vw,2rem)] min-w-0">
           {portfolioFilters.map((f) => (
             <button
@@ -106,9 +109,6 @@ export default function Portfolio({ onOpenModal }: PortfolioProps) {
             </button>
           ))}
         </div>
-        <span className="text-[clamp(10px,2vw,14px)] text-[var(--text-muted)] font-normal shrink-0 whitespace-nowrap pl-1">
-          {projectCountLabel}
-        </span>
       </div>
 
       <div
