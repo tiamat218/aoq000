@@ -1,9 +1,10 @@
 {
   "id": "album-quit",
-  "category": "album-covers",
+  "category": "posters",
   "title": "Quit",
-  "subtitle": "Album Artwork",
+  "subtitle": "Poster",
   "thumbnail": "/images/album-quit.png",
   "image": "/images/album-quit.png",
-  "description": "Album artwork reimagining the emergency exit sign icon with dripping blood details. Bold typographic treatment with \"QUIT\" in heavy black letterforms."
+  "description": "Album artwork reimagining the emergency exit sign icon with dripping blood details. Bold typographic treatment with \"QUIT\" in heavy black letterforms.",
+  "order": 4
 }
