@@ -5,5 +5,6 @@
   "subtitle": "Album Artwork",
   "thumbnail": "/images/album-champions.png",
   "image": "/images/album-champions.png",
-  "description": "Street billboard mockup showcasing a black-and-white hand with a championship ring. Editorial sports photography with bold typography overlay."
+  "description": "Street billboard mockup showcasing a black-and-white hand with a championship ring. Editorial sports photography with bold typography overlay.",
+  "order": 2
 }
