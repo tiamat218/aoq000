@@ -24,9 +24,11 @@ export interface PortfolioProject {
   subtitle: string;
   /** Cover image in the portfolio grid. */
   thumbnail: string;
-  /** Full image in the project modal. */
+  /** Full image in the project modal (shown first, top of scroll). */
   image: string;
   description: string;
   /** Optional sort order — lower number appears first. */
   order?: number;
+  /** Optional extra images shown below the main image in the modal (scrollable). */
+  additionalImages?: string[];
 }

@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   branch: main
 
-publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: /images
 
@@ -21,19 +20,8 @@ collections:
     identifier_field: id
     summary: "{{order}} — {{title}} ({{category}})"
     fields:
-      - {
-          label: "Order (Reihenfolge)",
-          name: "order",
-          widget: "number",
-          default: 99,
-          hint: "Niedrigere Zahl = weiter vorne, z.B. 1, 2, 3...",
-        }
-      - {
-          label: "ID (slug, no spaces)",
-          name: "id",
-          widget: "string",
-          hint: "e.g. poster-dirt — used as filename, don't change after creating",
-        }
+      - { label: "Order (Reihenfolge)", name: "order", widget: "number", default: 99, hint: "Niedrigere Zahl = weiter vorne, z.B. 1, 2, 3..." }
+      - { label: "ID (slug, no spaces)", name: "id", widget: "string", hint: "e.g. poster-dirt — used as filename, don't change after creating" }
       - label: "Category"
         name: "category"
         widget: "select"
@@ -43,12 +31,13 @@ collections:
           - { label: "Posters", value: "posters" }
           - { label: "Album Covers", value: "album-covers" }
       - { label: "Title", name: "title", widget: "string" }
-      - {
-          label: "Subtitle",
-          name: "subtitle",
-          widget: "string",
-          hint: "Short line on the grid card, e.g. 'Poster Design'",
-        }
+      - { label: "Subtitle", name: "subtitle", widget: "string", hint: "Short line on the grid card, e.g. 'Poster Design'" }
       - { label: "Thumbnail (grid image)", name: "thumbnail", widget: "image" }
-      - { label: "Full image (modal)", name: "image", widget: "image" }
+      - { label: "Main image (opens first in modal)", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
+      - label: "Additional images (optional, scroll below main image)"
+        name: "additionalImages"
+        widget: "list"
+        field: { label: "Image", name: "image", widget: "image" }
+        required: false
+        hint: "Leave empty if this project only has one image. Add as many as you like — they'll appear below the main image when scrolling."
